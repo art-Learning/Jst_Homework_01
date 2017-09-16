@@ -4,12 +4,15 @@ var Cart = require('../src/Cart.js');
 var target
 
 var VipCustomer = require('../src/VipCustomer.js')
+var NormalCustomer = require('../src/NormalCustomer.js')
 
 
 var vip = new VipCustomer()
+var normal = new NormalCustomer()
 var dataSets = [
     { args: [vip, 500, 1], expected: 400 },
     { args: [vip, 499, 1], expected: 499 },
+    { args: [normal, 250, 4], expected: 850 },
 ]
 
 beforeEach(() => {
