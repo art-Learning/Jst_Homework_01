@@ -9,6 +9,13 @@ ProductUtility.prototype.GetTotalAmount = function (products) {
     });
     return amount
 }
+ProductUtility.prototype.GetTotalCount = function (products) {
+    let count = 0
+    products.forEach((product) => {
+        count += product.Qty
+    });
+    return count
+}
 
 
 module.exports = ProductUtility;
