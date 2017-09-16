@@ -4,6 +4,7 @@ var VipCustomer = require('../src/VipCustomer.js');
 
 var dataSets = [
     { args: [500, 1], expected: 0.8 },
+    { args: [499, 1], expected: 1 },
 ]
 
 describe('VipCustomer', function () {
