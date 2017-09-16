@@ -4,7 +4,8 @@ const NormalCustomer = require('../src/NormalCustomer.js');
 
 var dataSets = [
     { args: [500, 1], expected: 1 },
-    { args: [350, 4], expected: 0.85},
+    { args: [350, 4], expected: 0.85 },
+    { args: [150, 4], expected: 1},
 ]
 
 describe('NormalCustomer', function () {
