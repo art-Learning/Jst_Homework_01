@@ -3,6 +3,10 @@ function VipCustomer(){
     
 }
 
+VipCustomer.prototype.GetName = function(){
+    return 'VIP'
+}
+
 VipCustomer.prototype.GetDiscount = function (products) {
     var prodUtil = new ProductUtility
     let amount = prodUtil.GetTotalAmount(products)
