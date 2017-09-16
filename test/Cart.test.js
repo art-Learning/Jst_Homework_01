@@ -13,6 +13,7 @@ var dataSets = [
     { args: [vip, 500, 1], expected: 400 },
     { args: [vip, 499, 1], expected: 499 },
     { args: [normal, 250, 4], expected: 850 },
+    { args: [normal, 350, 3], expected: 1050 },
 ]
 
 beforeEach(() => {
