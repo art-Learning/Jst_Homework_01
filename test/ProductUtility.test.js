@@ -4,6 +4,7 @@ var ProductUtility = require('../src/ProductUtility.js');
 
 var dataSets = [
     { args: [500, 1], expected: 500 },
+    { args: [350, 3], expected: 1050 },
 ]
 
 describe('ProductUtility', function () {
