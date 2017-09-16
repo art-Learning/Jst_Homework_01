@@ -2,7 +2,9 @@ var ProductUtility = require('../src/ProductUtility.js');
 function NormalCustomer(){
     
 }
-
+NormalCustomer.prototype.GetName = function () {
+    return 'Normal'
+}
 NormalCustomer.prototype.GetDiscount = function (products) {
     var prodUtil = new ProductUtility
     let amount = prodUtil.GetTotalAmount(products)
