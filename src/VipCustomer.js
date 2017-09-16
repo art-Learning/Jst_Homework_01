@@ -1,14 +1,11 @@
+var ProductUtility = require('../src/ProductUtility.js');
 function VipCustomer(){
     
 }
 
 VipCustomer.prototype.GetDiscount = function (products) {
-    let amount = 0;
-    let count = 0;
-    products.forEach((product) => {
-        amount += product.Price * product.Qty
-        count += product.Qty
-    });
+    var prodUtil = new ProductUtility
+    let amount = prodUtil.GetTotalAmount(products)
     if (amount<500) return 1
     return 0.8
 }
