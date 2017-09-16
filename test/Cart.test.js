@@ -9,6 +9,7 @@ var VipCustomer = require('../src/VipCustomer.js')
 var vip = new VipCustomer()
 var dataSets = [
     { args: [vip, 500, 1], expected: 400 },
+    { args: [vip, 499, 1], expected: 499 },
 ]
 
 beforeEach(() => {
