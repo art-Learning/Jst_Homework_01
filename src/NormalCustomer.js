@@ -5,12 +5,17 @@ function NormalCustomer(){
 NormalCustomer.prototype.GetDiscount = function (products) {
     let amount = 0;
     let count = 0;
+    products
     products.forEach((product)=> {
-        amount+=product.Price * product.Qty
-        count+=product.Qry
+        amount+=product.Price * product.Qty 
+        count += product.Qty 
     });
-    if (count<=3 || amount<1000) return 1
+    
+
+
+    if (count <= 3 || amount < 1000) return 1
     return 0.85
 }
 
 module.exports = NormalCustomer;
+

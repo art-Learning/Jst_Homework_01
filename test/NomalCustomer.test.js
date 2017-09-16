@@ -1,6 +1,6 @@
-const Mocha = require('mocha');
-const expect = require('chai').should();
-const NormalCustomer = require('../src/NormalCustomer.js');
+var chai = require('chai')
+var should = chai.should()
+var NormalCustomer = require('../src/NormalCustomer.js');
 
 var dataSets = [
     { args: [500, 1], expected: 1 },
