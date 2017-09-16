@@ -6,7 +6,7 @@ NormalCustomer.prototype.GetDiscount = function (products) {
     let amount = 0;
     let count = 0;
     products.forEach((product)=> {
-        amount+=product.Price * product.Qry
+        amount+=product.Price * product.Qty
         count+=product.Qry
     });
     if (count<=3 || amount<1000) return 1

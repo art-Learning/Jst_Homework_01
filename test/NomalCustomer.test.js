@@ -2,36 +2,24 @@ const Mocha = require('mocha');
 const expect = require('chai').should();
 const NormalCustomer = require('../src/NormalCustomer.js');
 
+var dataSets = [
+    { args: [500, 1], expected: 1 },
+    { args: [350, 4], expected: 0.85},
+]
+
 describe('NormalCustomer', function () {
   
   describe('#GetDiscount(products)', function () {
-      it('商品總金額未滿1000元，原價購買', () => {
-          // Arrange
-          var products = [{ Name:"愛心筆",Price:"500",Qry:1}]
-          var expected = 1;
-          var actual = 0;
-          var target = new NormalCustomer()
-          // Act
-          actual = target.GetDiscount(products);
-          
-          // Assert
-          actual.should.equal(expected);
-      });
 
-      
-      it('商品總金額超過1000元，數量超過3件，85折優惠', ()=> {
-          // Arrange
-          var products = [{ Name: "愛心書", Price: "350", Qry: 4 }]
-          var expected = 0.85
-          var actual = 0
-          var target = new NormalCustomer()
-          // Act
-          actual = target.GetDiscount(products)
-
-          // Assert
-          actual.should.equal(expected)
-      });
-      
+    dataSets.forEach((data)=> {
+        it(`商品單價:${data.args[0]} x 數量:${data.args[1]} 總金額:${data.args[0]*data.args[1]}，折扣比例為:${data.expected}`, () => {
+            var target = new NormalCustomer()
+            // Act
+            var products = [{ Name: "愛心筆", Price: data.args[0], Qty: data.args[1] }]
+            var actual = target.GetDiscount(products)
+            // Assert
+            actual.should.equal(data.expected);
+        });
+    });
   });
-  
 });
